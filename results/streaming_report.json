@@ -1,0 +1,136 @@
+{
+  "split": "test",
+  "events": 3290968,
+  "elapsed_seconds": 41.69,
+  "throughput_events_per_sec": 78939.0,
+  "avg_update_us": 1.733,
+  "windows": 9678,
+  "window_hours": 24,
+  "sampled_events": 3314,
+  "sample_rate": 0.001,
+  "reservoir_size": 5000,
+  "users_with_profile": 200948,
+  "decay_per_day": 1.0,
+  "profile_consistency_with_batch": true,
+  "first_windows": [
+    {
+      "start": 823264621,
+      "events": 5,
+      "mean_rating": 2.8,
+      "top_genres": [
+        {
+          "genre_index": 7,
+          "count": 3
+        },
+        {
+          "genre_index": 0,
+          "count": 2
+        },
+        {
+          "genre_index": 16,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "start": 825080160,
+      "events": 6,
+      "mean_rating": 1.8333,
+      "top_genres": [
+        {
+          "genre_index": 4,
+          "count": 3
+        },
+        {
+          "genre_index": 7,
+          "count": 2
+        },
+        {
+          "genre_index": 5,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "start": 825638400,
+      "events": 48,
+      "mean_rating": 3.4792,
+      "top_genres": [
+        {
+          "genre_index": 7,
+          "count": 20
+        },
+        {
+          "genre_index": 4,
+          "count": 16
+        },
+        {
+          "genre_index": 0,
+          "count": 14
+        }
+      ]
+    },
+    {
+      "start": 826014169,
+      "events": 5,
+      "mean_rating": 4.6,
+      "top_genres": [
+        {
+          "genre_index": 4,
+          "count": 4
+        },
+        {
+          "genre_index": 7,
+          "count": 3
+        },
+        {
+          "genre_index": 14,
+          "count": 2
+        }
+      ]
+    },
+    {
+      "start": 826624264,
+      "events": 11,
+      "mean_rating": 4.2727,
+      "top_genres": [
+        {
+          "genre_index": 7,
+          "count": 8
+        },
+        {
+          "genre_index": 4,
+          "count": 4
+        },
+        {
+          "genre_index": 14,
+          "count": 3
+        }
+      ]
+    }
+  ],
+  "last_window": {
+    "start": 1697149687,
+    "events": 127,
+    "mean_rating": 3.5118,
+    "top_genres": [
+      {
+        "genre_index": 7,
+        "count": 55
+      },
+      {
+        "genre_index": 4,
+        "count": 45
+      },
+      {
+        "genre_index": 16,
+        "count": 37
+      }
+    ]
+  },
+  "events_per_window": {
+    "min": 1,
+    "max": 4983,
+    "mean": 340.0
+  }
+}

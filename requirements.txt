@@ -1,10 +1,16 @@
 # 大数据技术课程项目依赖
 # 安装：pip install -r requirements.txt
+# 说明：PyTorch 请按本机 CUDA 版本单独安装（https://pytorch.org/get-started/locally/），
+#       本机验证版本为 torch 2.8.0+cu126；无 GPU 时自动回落到 CPU。
 
 # ---------- 核心数据处理 ----------
 pandas>=2.0
 numpy>=1.24
 scipy>=1.10          # 稀疏矩阵，协同过滤必需
+
+# ---------- 排序模型（任务六）----------
+torch>=2.0
+lightgbm>=4.0
 
 # ---------- 分布式计算（任务三）----------
 pyspark>=3.5

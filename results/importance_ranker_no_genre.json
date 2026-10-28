@@ -1,0 +1,34 @@
+[
+  {
+    "feature": "bpr",
+    "gain": 572263.3916091919
+  },
+  {
+    "feature": "pop_log",
+    "gain": 4214.552593231201
+  },
+  {
+    "feature": "item_trend",
+    "gain": 3575.4350662231445
+  },
+  {
+    "feature": "user_last_activity",
+    "gain": 2909.3510971069336
+  },
+  {
+    "feature": "user_activity",
+    "gain": 559.3476943969727
+  },
+  {
+    "feature": "item_mean",
+    "gain": 0.0
+  },
+  {
+    "feature": "item_bayes",
+    "gain": 0.0
+  },
+  {
+    "feature": "item_recency",
+    "gain": 0.0
+  }
+]

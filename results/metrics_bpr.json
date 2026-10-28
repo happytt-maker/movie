@@ -1,0 +1,15 @@
+{
+  "users": 191007,
+  "ndcg@10": 0.8562476281899937,
+  "recall@10": 0.8191409632226436,
+  "mrr@10": 0.8811483972040913,
+  "model": "bpr",
+  "pred_file": "E:\\学习计划\\计划\\作业\\movielens_system\\results\\top10_bpr.csv",
+  "candidates_file": "E:\\学习计划\\计划\\作业\\movielens_system\\data\\processed\\candidates_test.npz",
+  "k": 10,
+  "seed": 20260907,
+  "positive_threshold": 4,
+  "distinct_items_recommended": 12463,
+  "avg_recommendations_per_user": 10.0,
+  "elapsed_seconds": 35.17
+}

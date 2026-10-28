@@ -1,0 +1,39 @@
+{
+  "graph": {
+    "users": 20000,
+    "items": 23324,
+    "edges": 1305644,
+    "nodes": 43324,
+    "density": 0.00139123,
+    "avg_degree": 60.273
+  },
+  "pagerank": {
+    "seconds": 0.15,
+    "top_items": [
+      306,
+      285,
+      343,
+      565,
+      2331,
+      252,
+      2692,
+      506,
+      794,
+      4497
+    ]
+  },
+  "louvain": {
+    "seconds": 67.4,
+    "communities": 59,
+    "modularity": 0.3153,
+    "largest_community_nodes": 8653
+  },
+  "evaluation": {
+    "users": 4762,
+    "ndcg@10_popularity": 0.7453,
+    "ndcg@10_pagerank": 0.7451,
+    "ndcg@10_pagerank_plus_community": 0.7791,
+    "note": "同批抽样用户、同一候选集；PageRank 单独使用与热门基线接近，社区加权带来小幅变化"
+  },
+  "seed": 20260907
+}

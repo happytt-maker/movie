@@ -1,0 +1,27 @@
+{
+  "engine": "Spark MLlib ALS",
+  "spark_version": "3.5.3",
+  "runs": [
+    {
+      "rows": 2042661,
+      "fit_seconds": 425.6,
+      "read_seconds": 11.0,
+      "rank": 64,
+      "iters": 5,
+      "scale": 1.0,
+      "users": 19986,
+      "ndcg@10": 0.77095,
+      "score_seconds": 28.4
+    }
+  ],
+  "factors": {
+    "users": [
+      200571,
+      64
+    ],
+    "items": [
+      46847,
+      64
+    ]
+  }
+}

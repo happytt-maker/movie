@@ -1,0 +1,15 @@
+{
+  "head_items": 3000,
+  "k": 20,
+  "num_perm": 64,
+  "lsh_threshold": 0.3,
+  "total_items": 84432,
+  "exact_block_seconds": 30.42,
+  "lsh_seconds": 420.91,
+  "speedup_on_head": 13.837,
+  "avg_exact_similarity": 0.31675025820732117,
+  "recall_at_k": 0.14771666666666666,
+  "precision_at_k": 0.16214486736349118,
+  "avg_candidates": 23.859333333333332,
+  "note": "全量 84,432x84,432 精确余弦约 7.1e9 元素，单机不可行，故精确计算在头部条目集合内完成"
+}

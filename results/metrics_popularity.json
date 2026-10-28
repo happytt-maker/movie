@@ -1,0 +1,15 @@
+{
+  "users": 191007,
+  "ndcg@10": 0.7363408521400004,
+  "recall@10": 0.7290658806686184,
+  "mrr@10": 0.768670812862256,
+  "model": "popularity",
+  "pred_file": "E:\\学习计划\\计划\\作业\\movielens_system\\results\\top10_popularity.csv",
+  "candidates_file": "E:\\学习计划\\计划\\作业\\movielens_system\\data\\processed\\candidates_test.npz",
+  "k": 10,
+  "seed": 20260907,
+  "positive_threshold": 4,
+  "distinct_items_recommended": 5144,
+  "avg_recommendations_per_user": 10.0,
+  "elapsed_seconds": 15.73
+}

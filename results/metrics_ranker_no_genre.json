@@ -1,0 +1,23 @@
+{
+  "model": "ranker_no_genre",
+  "features": [
+    "pop_log",
+    "item_mean",
+    "item_bayes",
+    "item_recency",
+    "item_trend",
+    "user_activity",
+    "user_last_activity",
+    "bpr"
+  ],
+  "excluded": [
+    "genre_affinity"
+  ],
+  "users": 191007,
+  "ndcg@10": 0.87269,
+  "recall@10": 0.82399,
+  "train_rows": 7754332,
+  "best_iteration": 1,
+  "pred_file": "E:\\学习计划\\计划\\作业\\movielens_system\\results\\top10_ranker_no_genre.csv",
+  "elapsed_seconds": 66.7
+}

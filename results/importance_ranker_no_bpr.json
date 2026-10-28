@@ -1,0 +1,34 @@
+[
+  {
+    "feature": "pop_log",
+    "gain": 4653455.036633253
+  },
+  {
+    "feature": "item_recency",
+    "gain": 542443.5820176601
+  },
+  {
+    "feature": "item_trend",
+    "gain": 443195.1678289175
+  },
+  {
+    "feature": "user_last_activity",
+    "gain": 279661.514400959
+  },
+  {
+    "feature": "genre_affinity",
+    "gain": 171002.5617609024
+  },
+  {
+    "feature": "item_mean",
+    "gain": 61185.553971767426
+  },
+  {
+    "feature": "item_bayes",
+    "gain": 36400.14485383034
+  },
+  {
+    "feature": "user_activity",
+    "gain": 24843.209547758102
+  }
+]
