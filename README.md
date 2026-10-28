@@ -272,6 +272,8 @@ spark-submit --master "local[4]" --driver-memory 6g scripts/spark_als.py \
 
 - 结构：用户 embedding（200,948 × 64）+ 电影 embedding（84,432 × 64）+ 用户/电影偏置
 - 训练：4 轮，验证集 RMSE 0.7640
+- **训练脚本已随本项目提供**：`legacy/big_data/Big_Data.py`（只改了两处默认路径为项目内相对路径，
+  训练逻辑与超参数未动），来历与复现方式见 `legacy/big_data/README.md`
 - **注意**：它是在**随机划分**上训练的，与任务书要求的"按用户时间戳划分"不一致
 
 ### 7.3 为什么只复用 embedding，而不是直接拿来打分
@@ -362,6 +364,10 @@ project/
 │   ├── 演示材料.pptx            答辩幻灯片（8 页）
 │   ├── 个人贡献说明.md
 │   └── 答辩记录.md              预设问答 Q1–Q10
+├── legacy/
+│   └── big_data/
+│       ├── Big_Data.py          旧评分矩阵分解的训练脚本（movielens_mf.pt 的出处）
+│       └── README.md            来历、与原脚本的差异、为什么只复用 embedding
 ├── models/                     模型权重（movielens_mf.pt 随项目提供）
 ├── results/                    Top-10、指标、专题报告
 ├── scripts/
