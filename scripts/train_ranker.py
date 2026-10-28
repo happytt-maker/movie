@@ -39,8 +39,6 @@ def feature_names(npz, exclude: set[str]) -> list[str]:
 
 
 def main() -> int:
-    import lightgbm as lgb
-
     parser = argparse.ArgumentParser(description="LightGBM 排序模型")
     parser.add_argument("--config", default="configs/base.yaml")
     parser.add_argument("--name", default="ranker_full")
@@ -52,6 +50,8 @@ def main() -> int:
     parser.add_argument("--seed", type=int, default=None)
     parser.add_argument("--eval-chunk", type=int, default=1000000)
     args = parser.parse_args()
+
+    import lightgbm as lgb  # 延迟导入：缺依赖时 --help 仍可用，报错也更明确
 
     cfg = load_config(args.config)
     seed = int(cfg["seed"]) if args.seed is None else args.seed

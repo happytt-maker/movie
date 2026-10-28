@@ -22,6 +22,8 @@ LSH 召回 → Spark 分布式矩阵分解 → 评分流式增量处理 → 二�
 - [9. 目录结构](#9-目录结构)
 - [10. 常见问题](#10-常见问题)
 - [11. 已知限制](#11-已知限制)
+- [12. 文档](#12-文档)
+- [13. 自检记录](#13-自检记录交付前实测)
 
 ---
 
@@ -36,7 +38,7 @@ LSH 召回 → Spark 分布式矩阵分解 → 评分流式增量处理 → 二�
 | Spark ALS（20k 用户抽样） | 0.7896 | — | — | — | 任务三 |
 | BPR（随机初始化对照） | 0.8028 | 0.7840 | 0.8222 | +9.0% | 任务六 |
 | BPR（旧模型热启动） | 0.8562 | 0.8191 | 0.8811 | +16.3% | 任务六 |
-| **LightGBM 集成排序（最终）** | **0.8894** | **0.8301** | — | **+20.8%** | 任务六 |
+| **LightGBM 集成排序（最终）** | **0.8894** | **0.8301** | **0.9338** | **+20.8%** | 任务六 |
 
 三条主要结论：
 
@@ -190,6 +192,8 @@ spark-submit --master "local[4]" --driver-memory 6g scripts/spark_als.py \
 - **结论（负面结果）**：该数据的相似度分布很扁平，阈值 0.3 会过滤掉绝大多数真正相似的对。
   正确做法是按 Jaccard 分布自适应选阈值、增加 bands，或改用加权 MinHash。这个结果如实保留，
   因为它说明"近似算法必须按数据分布调参"。
+- **参数敏感性佐证**：把头部条目缩到 300 部时 recall@20 升到 0.4375，说明召回率强烈依赖集合
+  规模与阈值——同一套参数在小规模上看起来"能用"，放大到 3,000 部就崩了。
 
 ### 任务三 · Spark 分布式矩阵分解
 
@@ -337,6 +341,7 @@ userId,rank,movieId,score
 | `results/graph_report.json` | 图规模、PageRank/Louvain 耗时、三种排序的 NDCG |
 | `results/similarity_lsh.json` | 精确 top-K 与 LSH 的召回率、耗时、候选规模 |
 | `results/importance_ranker_full.json` | LightGBM 特征重要性 |
+| `results/metrics_ranker_full_eval.json` | 用 `evaluate.py` 对最终模型输出复核得到的指标（含 MRR@10 = 0.9338） |
 
 ### 8.4 数据产物
 
@@ -447,3 +452,27 @@ LightGBM 与 PyTorch 的版本差异会带来千分位波动，属于正常范�
 python scripts/build_report_docx.py   # 需要 python-docx
 python scripts/build_slides.py        # 需要 python-pptx
 ```
+
+---
+
+## 13. 自检记录（交付前实测）
+
+2026-10-28 在**交付目录内**逐脚本实跑（Windows / Python 3.9.25 / RTX 3050 Laptop）：
+
+| 环节 | 实际执行的命令 | 观察到的结果 |
+|---|---|---|
+| 依赖 | `import torch, lightgbm, scipy, networkx, datasketch` | torch 2.8.0+cu126、lightgbm 4.5.0、datasketch 正常 |
+| 数据处理（任务一） | `python scripts/prepare_data.py --out-dir data/_smoke_processed` | **59.9 s**；train 25,520,897 / valid 3,188,339 / test 3,290,968；候选 20,660,431 行、191,007 用户、正样本 1,559,731 —— 与交付数据完全一致，说明划分与负采样可复现 |
+| 热门基线（任务一） | `python -m src.baseline.popularity` | 191,007 用户，单用户 0.013 ms，Top-10 正常写出 |
+| 相似度/LSH（任务二） | `python -m src.similarity.itemknn --head 300 --k 20` | 精确 2.3 s、LSH 81.5 s、recall@20 = 0.4375（小规模） |
+| 流式（任务四） | `python -m src.streaming.replay --split test` | 3,290,968 事件、9,678 个窗口、画像计数与批量计算一致 |
+| BPR 打分（任务六） | `python -m src.ranking.bpr --mode predict --model-name bpr_mf` | 191,007 用户，Top-10 正常写出 |
+| 特征构建（任务六） | `python scripts/build_features.py --split valid --out-dir data/_smoke_features` | 20,281,548 行 × 9 个特征，无 NaN |
+| 排序训练（任务六） | `python scripts/train_ranker.py --name smoke_ranker --train-users 20000 --rounds 50` | 训练、预测、特征重要性均正常输出 |
+| 评估 | `python scripts/evaluate.py --pred results/top10_ranker_full.csv --name ranker_full_eval` | NDCG@10 0.8894 / Recall@10 0.8301 / MRR@10 0.9338 |
+
+Spark 任务不在上表内：它需要 pyspark + Java 环境，已用 `spark-submit` 单独实测通过，产物见
+`results/als_report.json`（12.9M 正反馈、5 轮 425 s、抽样 NDCG 0.771；10 轮 564 s、0.790）。
+
+验证过程中产生的临时文件（`data/_smoke_processed`、`data/_smoke_features`、`*smoke*` 结果）已全部
+清理，`results/` 只保留正式产物。
