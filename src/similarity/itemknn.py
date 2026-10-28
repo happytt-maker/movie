@@ -7,7 +7,7 @@
     上进行，LSH 也在同一集合上做近似召回，两者口径一致、可直接比较召回率。
 
 用法：
-    python -m src.similarity.itemknn --config configs/local.yaml --head 3000 --k 20
+    python -m src.similarity.itemknn --config configs/base.yaml --head 3000 --k 20
 """
 
 from __future__ import annotations

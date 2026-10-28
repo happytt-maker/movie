@@ -5,8 +5,8 @@
 只在候选集内排序，输出 Top-10。作为 NDCG@10 提升的对照基准。
 
 用法：
-    python -m src.baseline.popularity --config configs/local.yaml
-    python -m src.baseline.popularity --config configs/local.yaml --score weighted
+    python -m src.baseline.popularity --config configs/base.yaml
+    python -m src.baseline.popularity --config configs/base.yaml --score weighted
 """
 
 from __future__ import annotations

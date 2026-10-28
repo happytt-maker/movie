@@ -1,0 +1,19 @@
+# 覆盖配置示例：把数据放在别处时复制本文件为 local.yaml 再改路径。
+# 用法：python scripts/prepare_data.py --config configs/local.yaml
+#
+# 默认的 configs/base.yaml 已经全部使用项目内相对路径（相对项目根目录，与当前工作目录无关）：
+#   data/ml-32m/      原始 MovieLens 32M（ratings.csv / movies.csv / tags.csv / links.csv）
+#   data/processed/   时间划分与候选集产物
+#   data/features/    排序特征
+#   models/           模型权重（Contains movielens_mf.pt 热启动权重）
+#   results/          指标与 Top-10 输出
+#
+# 只有需要指到项目外时才需要本文件：
+extends: base.yaml
+
+paths:
+  raw_dir: data/ml-32m
+  processed_dir: data/processed
+  features_dir: data/features
+  models_dir: models
+  results_dir: results

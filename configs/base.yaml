@@ -24,11 +24,14 @@ metrics:
   secondary:
     - recall@10
 
-# 数据路径（data/ 已在 .gitignore 中，需自行下载）
+# 数据路径：全部相对项目根目录（src/data_io.resolve 统一解析，与当前工作目录无关），
+# 因此从任意目录执行脚本都能找到同一份数据。
 paths:
-  raw_dir: data/ml-32m
-  processed_dir: data/processed
-  results_dir: results
+  raw_dir: data/ml-32m          # 原始数据：ratings.csv / movies.csv / tags.csv / links.csv
+  processed_dir: data/processed  # 时间划分与候选集
+  features_dir: data/features    # 排序特征
+  models_dir: models             # 模型权重（movielens_mf.pt 为热启动初始权重）
+  results_dir: results           # 指标与 Top-10 输出
 
 # 业务指标：相对热门基线的提升目标
 target:

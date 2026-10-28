@@ -6,8 +6,8 @@
 两者都由 prepare_data.py 按同一协议生成，用户级切分不重叠。
 
 用法：
-    python scripts/train_ranker.py --config configs/local.yaml --name ranker_full
-    python scripts/train_ranker.py --config configs/local.yaml --name ranker_no_bpr --exclude bpr
+    python scripts/train_ranker.py --config configs/base.yaml --name ranker_full
+    python scripts/train_ranker.py --config configs/base.yaml --name ranker_no_bpr --exclude bpr
 """
 
 from __future__ import annotations
@@ -57,7 +57,7 @@ def main() -> int:
     seed = int(cfg["seed"]) if args.seed is None else args.seed
     processed = resolve(cfg["paths"]["processed_dir"])
     results = resolve(cfg["paths"]["results_dir"])
-    feature_dir = resolve("data/features")
+    feature_dir = resolve(cfg["paths"].get("features_dir", "data/features"))
 
     exclude = {x.strip() for x in args.exclude.split(",") if x.strip()}
     t0 = time.perf_counter()
@@ -168,7 +168,7 @@ def main() -> int:
         "recall@10": round(float(np.mean(recalls)), 5),
         "train_rows": int(X_tr.shape[0]),
         "best_iteration": int(booster.best_iteration or 0),
-        "pred_file": str(out_csv),
+        "pred_file": out_csv.name,
         "elapsed_seconds": round(time.perf_counter() - t0, 1),
     }
     out_json = results / f"metrics_{args.name}.json"

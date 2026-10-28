@@ -65,9 +65,13 @@ hs_err_pid*
 spark-events/
 
 # ---------- 模型与输出 ----------
+# 训练产物（bpr_mf.pt 等）可由 scripts/run_all.py 重新生成，不入库；
+# 但热启动用的初始权重 models/movielens_mf.pt 必须随项目提供，否则跑不出报告里的分数。
 models/*.bin
 models/*.pt
+!models/movielens_mf.pt
 models/*.h5
+models/*.npz
 outputs/
 predictions/
 
@@ -76,8 +80,9 @@ predictions/
 logs/
 
 # ---------- IDE / 系统 ----------
+# Visual Studio 索引文件，运行时被占用，且无提交价值
+.vs/
 .vscode/
-.idea/
 *.swp
 .DS_Store
 Thumbs.db

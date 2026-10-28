@@ -120,7 +120,7 @@ def build() -> Path:
     text_box(s, 0.7, 4.5, 11.9, 2.0,
              "· 同一套 BPR 召回，仅把随机初始化换成旧评分模型的 embedding 热启动，就多出 6.6%\n"
              "· LightGBM LambdaRank 融合 9 个特征，在 BPR 之上再提升 3.9%\n"
-             "· 全流程一条命令复现：python scripts/run_all.py --config configs/local.yaml",
+             "· 全流程一条命令复现：python scripts/run_all.py --config configs/base.yaml",
              size=15, color=NAVY, spacing=1.5)
 
     # 3 数据与协议

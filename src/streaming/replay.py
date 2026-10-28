@@ -7,8 +7,8 @@
   3. 画像增量更新：每个用户维护"类型计数画像"，事件到达即更新，不做全量重算。
 
 用法：
-    python -m src.streaming.replay --config configs/local.yaml --limit 500000
-    python -m src.streaming.replay --config configs/local.yaml --split test --decay 0.999
+    python -m src.streaming.replay --config configs/base.yaml --limit 500000
+    python -m src.streaming.replay --config configs/base.yaml --split test --decay 0.999
 """
 
 from __future__ import annotations

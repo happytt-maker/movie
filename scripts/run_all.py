@@ -3,8 +3,8 @@
 """一键跑通全流程（数据 -> 基线 -> 相似度 -> 图 -> 流式 -> 排序 -> 汇总）。
 
 用法：
-    python scripts/run_all.py --config configs/local.yaml
-    python scripts/run_all.py --config configs/local.yaml --skip prepare,knn
+    python scripts/run_all.py --config configs/base.yaml
+    python scripts/run_all.py --config configs/base.yaml --skip prepare,knn
 
 说明：
     * Spark 任务（任务三）不在本脚本内，需用 spark-submit 单独运行，见 README；
@@ -74,7 +74,7 @@ def summarize(config: str) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="一键运行全流程")
-    parser.add_argument("--config", default="configs/local.yaml")
+    parser.add_argument("--config", default="configs/base.yaml")
     parser.add_argument("--skip", default="", help="逗号分隔的跳过步骤")
     parser.add_argument("--only", default="", help="逗号分隔的只跑某些步骤")
     args = parser.parse_args()

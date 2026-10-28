@@ -8,7 +8,7 @@
 （同一份 ratings.csv 做 factorize(sort=True)），embedding 形状可直接对齐。
 
 用法：
-    python -m src.ranking.bpr --config configs/local.yaml --epochs 3
+    python -m src.ranking.bpr --config configs/base.yaml --epochs 3
 """
 
 from __future__ import annotations
@@ -245,10 +245,15 @@ def main() -> int:
     parser.add_argument("--eval-users", type=int, default=20000)
     parser.add_argument("--seed", type=int, default=None)
     parser.add_argument("--split", default="test", choices=["test", "valid"])
-    parser.add_argument("--init-from", default=None,
-                        help="热启动权重路径，例如 E:/VS_tools/Project/Big_Data/Big_Data/movielens_mf.pt")
+    parser.add_argument("--init-from", default="models/movielens_mf.pt",
+                        help="热启动权重路径（相对项目根目录），默认 models/movielens_mf.pt；"
+                             "文件不存在时自动退回随机初始化")
+    parser.add_argument("--no-init", action="store_true",
+                        help="忽略 models/movielens_mf.pt，强制随机初始化（用于对照组实验）")
     parser.add_argument("--model-name", default="bpr_mf", help="模型文件名（不含 .pt）")
     args = parser.parse_args()
+    if args.no_init:
+        args.init_from = None
     if args.seed is None:
         args.seed = int(load_config(args.config)["seed"])
 

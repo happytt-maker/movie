@@ -18,6 +18,6 @@
   "recall@10": 0.80708,
   "train_rows": 7754332,
   "best_iteration": 300,
-  "pred_file": "E:\\学习计划\\计划\\作业\\movielens_system\\results\\top10_ranker_no_bpr.csv",
+  "pred_file": "top10_ranker_no_bpr.csv",
   "elapsed_seconds": 316.1
 }

@@ -3,8 +3,8 @@
 """生成候选集上的排序特征（任务六）。
 
 用法：
-    python scripts/build_features.py --config configs/local.yaml --split valid
-    python scripts/build_features.py --config configs/local.yaml --split test
+    python scripts/build_features.py --config configs/base.yaml --split valid
+    python scripts/build_features.py --config configs/base.yaml --split test
 
 产物：data/features/{split}.npz
     每列一个与候选集等长的 float32 数组，另有 label / userId / movieId 便于校验。
@@ -76,7 +76,7 @@ def main() -> int:
     cfg = load_config(args.config)
     processed = resolve(cfg["paths"]["processed_dir"])
     models = resolve(cfg["paths"].get("models_dir", "models"))
-    feature_dir = Path(args.out_dir) if args.out_dir else resolve("data/features")
+    feature_dir = resolve(cfg["paths"].get("features_dir", "data/features")) if not args.out_dir else Path(args.out_dir)
 
     vocab = load_table(processed / "vocab.npz")
     n_users, n_items = len(vocab["userId"]), len(vocab["movieId"])

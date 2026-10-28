@@ -8,7 +8,7 @@
   4. 用 PageRank 分和"社区匹配度"给候选集排序，与热门基线在同一批用户上对比 NDCG@10。
 
 用法：
-    python -m src.graph.ppr --config configs/local.yaml --users 30000
+    python -m src.graph.ppr --config configs/base.yaml --users 30000
 """
 
 from __future__ import annotations

@@ -9,7 +9,7 @@
   4. 防泄漏：训练侧不读取测试标签；时序特征只用推荐时刻之前的数据
 
 用法：
-    python scripts/prepare_data.py --config configs/local.yaml
+    python scripts/prepare_data.py --config configs/base.yaml
 
 产物（默认 data/processed/）：
     train.npz / valid.npz / test.npz    userId,movieId,rating,timestamp

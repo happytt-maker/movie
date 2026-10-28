@@ -81,8 +81,8 @@ def main() -> int:
     covered = {m for items in pred.values() for m in items}
     metrics.update({
         "model": name,
-        "pred_file": str(pred_path),
-        "candidates_file": str(cand_path),
+        "pred_file": f"{pred_path.parent.name}/{pred_path.name}",
+        "candidates_file": f"{cand_path.parent.name}/{cand_path.name}",
         "k": k,
         "seed": cfg["seed"],
         "positive_threshold": cfg["positive_threshold"],
