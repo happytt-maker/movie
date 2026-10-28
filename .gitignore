@@ -1,0 +1,89 @@
+# ============================================================
+# MovieLens 分布式增量电影推荐系统 —— 忽略规则
+# 目标：确保仓库可推送（GitHub 单文件上限 100MB）、无数据泄漏
+# ============================================================
+
+# ---------- MovieLens 原始数据（严禁提交）----------
+# ml-32m 解压后 ratings.csv 约 1GB，超过 GitHub 100MB 单文件限制
+# 注意：必须写成 data/* 而非 data/，否则下方的例外规则无法生效
+#       （git 不允许重新包含已被整体排除的目录内的文件）
+data/*
+!data/README.md
+ml-32m/
+ml-latest/
+ml-25m/
+ml-1m/
+*.zip
+*.tar.gz
+*.7z
+
+# 除结果目录外的 CSV 一律忽略（结果文件需要提交）
+*.csv
+!results/**/*.csv
+
+# 中间产物：Parquet 属于列式存储中间结果，体积大
+*.parquet
+*.pkl
+*.joblib
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虚拟环境
+venv/
+.venv/
+env/
+ENV/
+
+# ---------- Jupyter ----------
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ---------- PySpark / Hive 运行时产物 ----------
+spark-warehouse/
+metastore_db/
+derby.log
+hs_err_pid*
+spark-events/
+
+# ---------- 模型与输出 ----------
+models/*.bin
+models/*.pt
+models/*.h5
+outputs/
+predictions/
+
+# ---------- 日志 ----------
+*.log
+logs/
+
+# ---------- IDE / 系统 ----------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- 环境与密钥 ----------
+.env
+.env.local
+*.secret

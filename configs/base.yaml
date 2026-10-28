@@ -1,0 +1,36 @@
+# 实验协议配置 —— 严格对应课程任务书「五 数据划分与评价协议」
+# 修改任何一项都会导致与教师统一脚本的结果不可比，请勿随意改动
+
+# 全局随机种子（任务书强制要求：候选集统一使用 20260907）
+seed: 20260907
+
+# 正反馈定义：评分 >= 4 记为正样本
+positive_threshold: 4
+
+# 时间划分：对每位用户按 timestamp 升序排序后按比例切分
+split:
+  train: 0.8      # 前 80% 训练
+  valid: 0.1      # 中间 10% 验证
+  test: 0.1       # 最后 10% 测试
+
+# 候选集构造：每个测试用户 = 测试正样本 + 100 个固定负样本
+candidates:
+  negatives_per_user: 100
+  seed: 20260907
+
+# 评价指标
+metrics:
+  primary: ndcg@10
+  secondary:
+    - recall@10
+
+# 数据路径（data/ 已在 .gitignore 中，需自行下载）
+paths:
+  raw_dir: data/ml-32m
+  processed_dir: data/processed
+  results_dir: results
+
+# 业务指标：相对热门基线的提升目标
+target:
+  baseline: popularity
+  min_ndcg_improvement: 0.10   # 提升不低于 10%
