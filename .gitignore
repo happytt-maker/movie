@@ -17,9 +17,12 @@ ml-1m/
 *.tar.gz
 *.7z
 
-# 除结果目录外的 CSV 一律忽略（结果文件需要提交）
+# CSV：结果目录默认提交，但 Top-10 明细每个 40MB+，属于可重新生成的产物，不入库
 *.csv
 !results/**/*.csv
+results/top10_*.csv
+# 只保留 200 行样例，供别人了解输出格式
+!results/sample_top10.csv
 
 # 中间产物：Parquet 属于列式存储中间结果，体积大
 *.parquet

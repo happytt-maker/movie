@@ -23,3 +23,15 @@
 *.zip   binary
 *.parquet binary
 *.pkl   binary
+*.pt    binary
+*.npz   binary
+*.docx  binary
+*.pptx  binary
+*.xlsx  binary
+
+# —— GitHub 语言统计：生成物与文档不计入语言占比 ——
+# 否则仓库首页会显示成 "CSV 99%"，掩盖真实的 Python 代码量
+results/*.json linguist-generated
+results/*.csv  linguist-generated
+data/**        linguist-vendored
+docs/**        linguist-documentation
