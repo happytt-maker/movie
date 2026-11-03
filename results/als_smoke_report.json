@@ -1,0 +1,28 @@
+{
+  "engine": "Spark MLlib ALS",
+  "spark_version": "3.5.3",
+  "runs": [
+    {
+      "rows": 8,
+      "fit_seconds": 2.5,
+      "read_seconds": 5.5,
+      "rank": 2,
+      "iters": 1,
+      "scale": 1.0,
+      "users": 4,
+      "ndcg@10": 0.81546,
+      "score_seconds": 1.0
+    }
+  ],
+  "factors": {
+    "users": [
+      4,
+      2
+    ],
+    "items": [
+      5,
+      2
+    ]
+  },
+  "dataset_note": "Synthetic 12-row smoke input only; not MovieLens 32M results."
+}

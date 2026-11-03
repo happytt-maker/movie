@@ -173,6 +173,26 @@ spark-submit --master "local[4]" --driver-memory 6g scripts/spark_als.py \
 
 ---
 
+### 4.4 服务化启动
+
+先安装 requirements.txt 中锁定的 Python 依赖，并在 web/ 下运行 npm.cmd ci。API 需要原始数据处理结果、BPR 权重和验证集特征；这些文件缺失时，启动脚本会列出缺少项并退出。
+
+模型文件已生成后，在仓库根目录启动前后端：
+
+    .\.venv\Scripts\python.exe scripts\start_all.py
+
+Windows 用户也可双击 `start.bat`；传入 `--frontend-only` 可预览静态演示页面：
+
+    start.bat --frontend-only
+
+这会启动 FastAPI（127.0.0.1:8001）和 Vite（127.0.0.1:5173），前端使用 API 数据源。只看仓库自带的静态演示数据时运行：
+
+    .\.venv\Scripts\python.exe scripts\start_all.py --frontend-only
+
+静态模式不依赖 BPR 权重、处理数据或 Java。部署步骤见 docs/部署说明.md；Windows Spark 环境见 docs/spark-setup.md。
+
+---
+
 ## 5. 六个任务
 
 ### 任务一 · 数据检查与热门基线
@@ -367,7 +387,7 @@ project/
 │   └── spark/                  Spark 输入导出（可重新生成）
 ├── docs/
 │   ├── 项目报告.md / .docx      完整项目报告
-│   ├── 演示材料.pptx            答辩幻灯片（8 页）
+│   ├── 演示材料.pptx            答辩幻灯片（9 页）
 │   ├── 个人贡献说明.md
 │   └── 答辩记录.md              预设问答 Q1–Q10
 ├── legacy/
@@ -444,13 +464,17 @@ LightGBM 与 PyTorch 的版本差异会带来千分位波动，属于正常范�
 
 ## 12. 文档
 
+本阶段工程交付说明：docs/部署说明.md 记录服务启动与部署；docs/spark-setup.md 记录 Spark 环境和 ALS 运行。
+
 | 文件 | 说明 |
 |---|---|
 | `docs/项目报告.md` / `.docx` | 完整报告：问题定义、数据分析、架构、算法、实验、结果、局限 |
-| `docs/演示材料.pptx` | 8 页答辩幻灯片 |
+| `docs/演示材料.pptx` | 9 页答辩幻灯片 |
 | `docs/个人贡献说明.md` | 承担工作与关键决策 |
 | `docs/答辩记录.md` | 预设答辩问答 Q1–Q10 |
 | `docs/服务化接口说明.md` | FastAPI 接口详细文档（启动方式、请求示例、性能实测） |
+| `docs/部署说明.md` | 本地安装、模型准备、前后端一键启动 |
+| `docs/spark-setup.md` | Java / PySpark 配置与 ALS 运行记录 |
 
 重新生成文档：
 
