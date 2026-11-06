@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-11-03 20:53:51",
+  "protocol": {
+    "positive_threshold": 4,
+    "split": {
+      "train": 0.8,
+      "valid": 0.1,
+      "test": 0.1
+    },
+    "negatives_per_user": 100,
+    "seed": 20260907
+  },
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "A1 划分互斥",
+      "ok": true,
+      "detail": "train∩valid=0, train∩test=0, valid∩test=0（共 25,520,897/3,188,339/3,290,968 对）"
+    },
+    {
+      "check": "A2 时序单调",
+      "ok": true,
+      "detail": "200,948 个三段齐全的用户中，train>valid 0 处，valid>test 0 处"
+    },
+    {
+      "check": "A3 候选集干净",
+      "ok": true,
+      "detail": "正负样本重复对 0，单用户最大负样本 100"
+    },
+    {
+      "check": "A4 测试正样本来源",
+      "ok": true,
+      "detail": "候选集正样本 1,559,731 对，不在 test 划分中的 0"
+    },
+    {
+      "check": "A5 特征只用训练期",
+      "ok": true,
+      "detail": "train 时间上界 1697158867，全量上界 1697164147（builder 只用 train.npz 计算统计量）"
+    },
+    {
+      "check": "A6 训练不碰 test",
+      "ok": true,
+      "detail": "valid.npz 用于训练=True，test.npz 仅用于打分=True"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "ranker_full",
+  "model_file": "ranker_full.txt",
+  "features": [
+    "pop_log",
+    "item_mean",
+    "item_bayes",
+    "item_recency",
+    "item_trend",
+    "user_activity",
+    "user_last_activity",
+    "genre_affinity",
+    "bpr"
+  ],
+  "best_iteration": 1,
+  "lightgbm": "4.5.0",
+  "seed": 20260907,
+  "train_users": 80000,
+  "rounds": 300,
+  "leaves": 63,
+  "lr": 0.05,
+  "positive_threshold": 4,
+  "trained_at": "2026-11-03 20:22:40"
+}

@@ -1,0 +1,12 @@
+{
+  "model": "als",
+  "method": "Spark MLlib ALS（隐式反馈，rank=64）因子点积，在测试候选集内取 Top10",
+  "factors": "E:\\Deepseek\\work\\movie\\models\\als_factors.npz",
+  "users": 190880,
+  "rows": 1908800,
+  "k": 10,
+  "candidate_coverage": 0.9438,
+  "elapsed_seconds": 36.0,
+  "pred_file": "top10_als.csv",
+  "note": "ALS 只覆盖训练中出现过的用户/电影；未覆盖的行不参与排序，因此用户数可能少于 191,007"
+}

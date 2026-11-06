@@ -1,0 +1,15 @@
+{
+  "users": 191007,
+  "ndcg@10": 0.8175362306145574,
+  "recall@10": 0.7896649959944569,
+  "mrr@10": 0.8387829570112156,
+  "model": "lsh",
+  "pred_file": "results/top10_lsh.csv",
+  "candidates_file": "processed/candidates_test.npz",
+  "k": 10,
+  "seed": 20260907,
+  "positive_threshold": 4,
+  "distinct_items_recommended": 7121,
+  "avg_recommendations_per_user": 10.0,
+  "elapsed_seconds": 21.13
+}
