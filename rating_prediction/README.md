@@ -110,7 +110,7 @@ MSE_期望 = 0.65168 × 0.9243² + 0.34832 × 0.8386²   →   预期测试集 R
 - **按测试集构成加权，预期测试集 RMSE ≈ 0.895**
 - 偏置项贡献 0.118 的降幅、因子只再降 0.073——大部分增益来自「电影有多好」，不是「这个人多独特」
 
-提交文件 `output/test_pairs_pred.csv`：100,000 行、三列逐行对齐、无缺失、无越界；预测均值 3.577、标准差 0.571、唯一值 24,457 个。
+提交文件 `output/test_pairs_pred.csv`：100,000 行 × 4 列，前三列（`userId, movieId, timestamp`）与原表逐行一致，第 4 列 `rating` 为预测评分（列名与 `ratings.csv` 一致）；无缺失、无越界；均值 3.5767、标准差 0.5706、唯一值 24,457 个。
 
 ---
 
@@ -150,7 +150,7 @@ rating_prediction/
 │   └── make_submission.py       生成 output/test_pairs_pred.csv
 ├── docs/
 │   ├── 项目报告.md              完整报告（含全部数字与来源）
-│   ├── 答辩PPT.pptx             12 页答辩 PPT
+│   ├── 答辩PPT.pptx             15 页答辩 PPT（主线：算法实现思路）
 │   ├── PPT设计稿.md             逐页设计说明（版式、配色、每页结论）
 │   └── figs/                    8 张图（报告版）
 ├── reports/                     所有实验的原始 json 与训练日志（数字可追溯）
@@ -196,8 +196,9 @@ python scripts/make_figs.py
 python scripts/make_slide_figs.py
 ```
 
-单轮（64 维、6 轮、3,190 万条、batch 8192）在 RTX 3050 Laptop（4 GB 显存）上约 5 分钟，
-记录见 `reports/metrics_*.json` 的 `elapsed_seconds`（如 T0 为 317 秒）。
+单轮约 33 秒（64 维、batch 8192、3,190 万条），六个 epoch 约 200 秒；
+三个种子全量重训约 10 分钟。依据 `reports/metrics_*.json` 的 `elapsed_seconds`
+（V1 为 199.8 秒／6 轮，T0 为 317.1 秒／10 轮，均由该字段反算）。
 
 ---
 

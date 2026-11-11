@@ -106,7 +106,7 @@ def main() -> None:
 
     out = C.ROOT / args.out
     out.parent.mkdir(parents=True, exist_ok=True)
-    lines = ["userId,movieId,timestamp,pred_rating"]
+    lines = ["userId,movieId,timestamp,rating"]
     for u, m, ts, p in zip(tp.userId, tp.movieId, tp.timestamp, pred):
         lines.append(f"{int(u)},{int(m)},{int(ts)},{p:.4f}")
     out.write_text("\n".join(lines) + "\n", encoding="utf-8")

@@ -1,4 +1,4 @@
-userId,movieId,timestamp,pred_rating
+userId,movieId,timestamp,rating
 54315,20175,1697164098,3.4873
 255263,108762,1697164098,4.0509
 255263,110171,1697163923,3.1385
