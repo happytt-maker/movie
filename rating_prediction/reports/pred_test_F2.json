@@ -1,0 +1,16 @@
+{
+  "tag": "F2",
+  "mode": "final",
+  "dim": 64,
+  "epochs": 8,
+  "seed": 2,
+  "l2": 0.03,
+  "time_half_life": 0.0,
+  "rows": 100000,
+  "pred_mean": 3.574296236038208,
+  "pred_std": 0.546373724937439,
+  "split": {
+    "mode": "final",
+    "train_rows": 31900204
+  }
+}

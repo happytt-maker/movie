@@ -1,0 +1,23 @@
+[13:21:58] device=cuda dim=64 epochs=15 seed=1 final=False half=all kappa=10.0 lr=0.001 l2=0.03
+[13:22:08] 训练行 31,685,183 / 留出行 61,574  (载入 10s)
+[13:22:08]   留出明细 {"ml": 30724, "synthetic": 30850} 每人中位 4
+[13:22:13] 偏置初值完成 μ=3.5403 (lam_u=50.0 lam_i=2.0)
+[13:22:15] 每轮 3,868 步（batch=8192）
+[13:22:42] epoch 01/15 train_MSE 0.7874 (26s) | valid_RMSE 0.86472  *
+[13:23:10] epoch 02/15 train_MSE 0.7091 (27s) | valid_RMSE 0.84972  *
+[13:23:39] epoch 03/15 train_MSE 0.6786 (28s) | valid_RMSE 0.84434  *
+[13:24:07] epoch 04/15 train_MSE 0.6627 (27s) | valid_RMSE 0.84172  *
+[13:24:35] epoch 05/15 train_MSE 0.6518 (27s) | valid_RMSE 0.84018  *
+[13:25:04] epoch 06/15 train_MSE 0.6435 (27s) | valid_RMSE 0.83995  *
+[13:25:33] epoch 07/15 train_MSE 0.6366 (29s) | valid_RMSE 0.83932  *
+[13:26:02] epoch 08/15 train_MSE 0.6306 (28s) | valid_RMSE 0.83923  *
+[13:26:31] epoch 09/15 train_MSE 0.6251 (27s) | valid_RMSE 0.83945
+[13:26:59] epoch 10/15 train_MSE 0.6200 (27s) | valid_RMSE 0.83934
+[13:27:27] epoch 11/15 train_MSE 0.6152 (27s) | valid_RMSE 0.83936
+[13:27:57] epoch 12/15 train_MSE 0.6106 (29s) | valid_RMSE 0.83983
+[13:28:25] epoch 13/15 train_MSE 0.6061 (27s) | valid_RMSE 0.84006
+[13:28:54] epoch 14/15 train_MSE 0.6018 (28s) | valid_RMSE 0.84073
+[13:29:24] epoch 15/15 train_MSE 0.5976 (29s) | valid_RMSE 0.84131
+[13:29:24] 回载最优 epoch=8 valid_RMSE=0.83923
+[13:29:25] 已保存全表预测 fit_pred_C1.npz（供 GBDT 特征使用）
+[13:29:25] 留出集 RMSE 0.83923 (真实 0.80800 / 合成 0.86922) MAE 0.63806

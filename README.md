@@ -9,8 +9,25 @@ LSH 召回 → Spark 分布式矩阵分解 → 评分流式增量处理 → 二�
 
 ---
 
+## 附加任务：评分回归预测（RMSE）
+
+> 课程任务之后老师追加的**独立任务**：不做排序，改为预测评分。
+> 输入 `test_pairs.csv` 的 100,000 个（用户, 电影）对，输出预测评分，指标 **RMSE**。
+> 与上面的 NDCG@10 任务互不影响，代码与报告全部在 [`rating_prediction/`](rating_prediction/)。
+>
+> **预期测试集 RMSE ≈ 0.8954**　·　验证集（时间尾部口径）0.8386　·　真实/合成半区 0.8073 / 0.8687
+
+这个任务的关键不是模型复杂度，而是**看清测试集的构造**：其中 65.2% 的测试行来自仅 1,043 位
+「训练表里恰好只有 5 条评分」的用户，人均要预测 62 条。任何按时间切分的验证集都造不出这种形态，
+必须专门模拟才能估准误差。完整推导见 [`rating_prediction/README.md`](rating_prediction/README.md)
+与 [`rating_prediction/docs/项目报告.md`](rating_prediction/docs/项目报告.md)，答辩 PPT 为
+[`rating_prediction/docs/答辩PPT.pptx`](rating_prediction/docs/答辩PPT.pptx)。
+
+---
+
 ## 目录
 
+- [附加任务：评分回归预测（RMSE）](#附加任务评分回归预测rmse)
 - [1. 结果总览](#1-结果总览)
 - [2. 环境准备](#2-环境准备)
 - [3. 数据准备](#3-数据准备)

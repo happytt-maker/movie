@@ -1,0 +1,11 @@
+{
+  "tag": "gbdt_res",
+  "mf_feature": "f_d64l2e2",
+  "rmse": 0.8764335277458128,
+  "mae": 0.6607909529114985,
+  "rmse_ml": 0.8753069852185218,
+  "rmse_synthetic": 0.8775478040862117,
+  "fit_rows": 20000000,
+  "n_iter": 400,
+  "elapsed_seconds": 192.8
+}

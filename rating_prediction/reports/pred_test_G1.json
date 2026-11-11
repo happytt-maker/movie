@@ -1,0 +1,16 @@
+{
+  "tag": "G1",
+  "mode": "final",
+  "dim": 64,
+  "epochs": 6,
+  "seed": 1,
+  "l2": 0.03,
+  "time_half_life": 0.0,
+  "rows": 100000,
+  "pred_mean": 3.576481342315674,
+  "pred_std": 0.5716386437416077,
+  "split": {
+    "mode": "final",
+    "train_rows": 31900204
+  }
+}

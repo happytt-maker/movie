@@ -1,0 +1,31 @@
+{
+  "tag": "S1",
+  "mode": "valid",
+  "dim": 64,
+  "epochs": 8,
+  "epoch_used": 8,
+  "seed": 2,
+  "l2": 0.03,
+  "time_half_life": 0.0,
+  "rmse": 0.9280100078177392,
+  "mae": 0.723162375562202,
+  "rmse_unclipped": 0.9280100078177392,
+  "rmse_ml": 0.9107342921433118,
+  "rmse_synthetic": 0.9438176014763602,
+  "split": {
+    "train_rows": 31694103,
+    "valid_rows": 64666,
+    "valid_users": 1043,
+    "valid_movies": 10892,
+    "valid_per_user_median": 62.0,
+    "valid_per_user_max": 62,
+    "valid_by_half": {
+      "ml": 31186,
+      "synthetic": 33480
+    },
+    "train_time_max": "2023-10-13",
+    "valid_time_min": "1996-03-31",
+    "valid_time_max": "2023-08-26"
+  },
+  "elapsed_seconds": 245.5
+}

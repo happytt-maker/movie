@@ -1,0 +1,30 @@
+{
+  "tag": "bias_tail",
+  "mode": "valid",
+  "rmse": 0.9129422959418918,
+  "mae": 0.7010815978131545,
+  "rmse_unclipped": 0.9129587285046349,
+  "rmse_ml": 0.8461278113923999,
+  "rmse_synthetic": 0.9749435713820159,
+  "best_shrinkage": {
+    "lam_u": 50,
+    "lam_i": 2
+  },
+  "grid": [],
+  "split": {
+    "train_rows": 31685183,
+    "valid_rows": 61574,
+    "valid_users": 5480,
+    "valid_movies": 19878,
+    "valid_per_user_median": 4.0,
+    "valid_per_user_max": 1040,
+    "valid_by_half": {
+      "ml": 30724,
+      "synthetic": 30850
+    },
+    "train_time_max": "2023-06-30",
+    "valid_time_min": "2023-07-01",
+    "valid_time_max": "2023-10-12"
+  },
+  "elapsed_seconds": 14.1
+}

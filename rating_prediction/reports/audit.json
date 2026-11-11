@@ -1,0 +1,165 @@
+{
+  "rows": 31900204,
+  "columns": [
+    "userId",
+    "movieId",
+    "rating",
+    "timestamp"
+  ],
+  "missing": {
+    "userId": 0,
+    "movieId": 0,
+    "rating": 0,
+    "timestamp": 0
+  },
+  "duplicated_pairs": 0,
+  "users": 396060,
+  "movies": 142609,
+  "rating_min": 0.5,
+  "rating_max": 5.0,
+  "rating_mean": 3.5403594970703125,
+  "rating_std": 1.0590440034866333,
+  "rating_values": [
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0
+  ],
+  "timestamp_min": 789652004,
+  "timestamp_max": 1697158815,
+  "time_span_days": 10503.6,
+  "density": 0.00056,
+  "half_stats": {
+    "ml": {
+      "rows": 15950149,
+      "users": 200948,
+      "movies": 71252,
+      "rating_mean": 3.5401,
+      "rating_std": 1.0591,
+      "rating_min": 0.5,
+      "rating_max": 5.0,
+      "unique_rating_values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5,
+        5.0
+      ],
+      "t_min": "1995-01-09",
+      "t_max": "2023-10-13",
+      "ratings_per_user_median": 36.0,
+      "ratings_per_movie_median": 4.0
+    },
+    "synthetic": {
+      "rows": 15950055,
+      "users": 195112,
+      "movies": 71357,
+      "rating_mean": 3.5406,
+      "rating_std": 1.059,
+      "rating_min": 0.5,
+      "rating_max": 5.0,
+      "unique_rating_values": [
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5,
+        5.0
+      ],
+      "t_min": "1995-01-09",
+      "t_max": "2023-10-13",
+      "ratings_per_user_median": 34.0,
+      "ratings_per_movie_median": 4.0
+    }
+  },
+  "cross_half_rows": 0,
+  "rating_hist_overall": {
+    "0.5": 523903,
+    "1.0": 944413,
+    "1.5": 528524,
+    "2.0": 2023138,
+    "2.5": 1677770,
+    "3.0": 6037342,
+    "3.5": 4276460,
+    "4.0": 8342778,
+    "4.5": 2963581,
+    "5.0": 4582295
+  },
+  "rating_hist_by_half": {
+    "ml": {
+      "0.5": 261976,
+      "1.0": 472616,
+      "1.5": 264450,
+      "2.0": 1011844,
+      "2.5": 838788,
+      "3.0": 3019301,
+      "3.5": 2137108,
+      "4.0": 4173639,
+      "4.5": 1479960,
+      "5.0": 2290467
+    },
+    "synthetic": {
+      "0.5": 261927,
+      "1.0": 471797,
+      "1.5": 264074,
+      "2.0": 1011294,
+      "2.5": 838982,
+      "3.0": 3018041,
+      "3.5": 2139352,
+      "4.0": 4169139,
+      "4.5": 1483621,
+      "5.0": 2291828
+    }
+  },
+  "test": {
+    "rows": 100000,
+    "users": 5498,
+    "movies": 16036,
+    "duplicated_pairs": 0,
+    "t_min": "2023-08-30 06:03",
+    "t_max": "2023-10-13 02:28",
+    "rows_user_in_train": 100000,
+    "rows_movie_in_train": 100000,
+    "pairs_already_in_train": 0,
+    "train_history_per_test_user": {
+      "min": 5,
+      "p25": 5.0,
+      "median": 5.0,
+      "p75": 112.0,
+      "max": 4788
+    },
+    "rows_after_user_last_train": 100000,
+    "rows_before_user_last_train": 0,
+    "by_half": {
+      "ml": 49953,
+      "synthetic": 50047
+    }
+  },
+  "holdout": {
+    "rows": 1707142,
+    "train_rows": 30193062
+  },
+  "baselines_quick": {
+    "global_mean": 1.06074,
+    "user_mean": 1.02233,
+    "item_mean": 0.97005,
+    "bias_als": 0.92314,
+    "bias_als_clipped": 0.92308
+  },
+  "elapsed_seconds": 57.2
+}

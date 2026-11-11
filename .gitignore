@@ -23,6 +23,8 @@ ml-1m/
 results/top10_*.csv
 # 只保留 200 行样例，供别人了解输出格式
 !results/sample_top10.csv
+# rating_prediction/ 的提交文件是交付物本身（100,000 行预测结果），必须入库
+!rating_prediction/output/*.csv
 
 # 中间产物：Parquet 属于列式存储中间结果，体积大
 *.parquet
@@ -81,6 +83,8 @@ predictions/
 # ---------- 日志 ----------
 *.log
 logs/
+# 训练曲线图由 scripts/make_slide_figs.py 解析该日志生成，属于小型可复现证据
+!rating_prediction/reports/curve.log
 
 # ---------- IDE / 系统 ----------
 # Visual Studio 索引文件，运行时被占用，且无提交价值

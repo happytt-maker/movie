@@ -1,0 +1,10 @@
+# 第二阶段（评分预测）依赖
+# 实测环境：Windows 11 + Python 3.10 + PyTorch 2.x（CUDA 12.1），RTX 3050 Laptop 4GB
+# 说明：没有 GPU 也能跑完，只是慢；显存 4GB 足够（模型只有 64 维因子 + 两套偏置）
+
+torch>=2.0
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+scipy>=1.10
+scikit-learn>=1.3

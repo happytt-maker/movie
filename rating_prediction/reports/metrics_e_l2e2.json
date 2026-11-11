@@ -1,0 +1,31 @@
+{
+  "tag": "e_l2e2",
+  "mode": "valid",
+  "dim": 32,
+  "epochs": 12,
+  "epoch_used": 6,
+  "seed": 1,
+  "l2": 0.01,
+  "time_half_life": 0.0,
+  "rmse": 0.8546533722869898,
+  "mae": 0.645944704354112,
+  "rmse_unclipped": 0.855036949243409,
+  "rmse_ml": 0.839479296832109,
+  "rmse_synthetic": 0.8694204415439502,
+  "split": {
+    "train_rows": 31540392,
+    "valid_rows": 106933,
+    "valid_users": 7198,
+    "valid_movies": 26040,
+    "valid_per_user_median": 6.0,
+    "valid_per_user_max": 1040,
+    "valid_by_half": {
+      "ml": 53208,
+      "synthetic": 53725
+    },
+    "train_time_max": "2023-04-30",
+    "valid_time_min": "2023-05-01",
+    "valid_time_max": "2023-10-12"
+  },
+  "elapsed_seconds": 357.7
+}

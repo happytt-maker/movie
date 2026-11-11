@@ -1,0 +1,16 @@
+{
+  "tag": "G3",
+  "mode": "final",
+  "dim": 64,
+  "epochs": 6,
+  "seed": 3,
+  "l2": 0.03,
+  "time_half_life": 0.0,
+  "rows": 100000,
+  "pred_mean": 3.5786380767822266,
+  "pred_std": 0.571596086025238,
+  "split": {
+    "mode": "final",
+    "train_rows": 31900204
+  }
+}

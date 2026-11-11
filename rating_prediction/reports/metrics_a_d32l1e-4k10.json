@@ -1,0 +1,31 @@
+{
+  "tag": "a_d32l1e-4k10",
+  "mode": "valid",
+  "dim": 32,
+  "epochs": 10,
+  "epoch_used": 3,
+  "seed": 1,
+  "l2": 0.0001,
+  "time_half_life": 0.0,
+  "rmse": 0.8602808492703351,
+  "mae": 0.6516425714173919,
+  "rmse_unclipped": 0.8607084696538865,
+  "rmse_ml": 0.8423972953766681,
+  "rmse_synthetic": 0.8776332114247558,
+  "split": {
+    "train_rows": 31540392,
+    "valid_rows": 106933,
+    "valid_users": 7198,
+    "valid_movies": 26040,
+    "valid_per_user_median": 6.0,
+    "valid_per_user_max": 1040,
+    "valid_by_half": {
+      "ml": 53208,
+      "synthetic": 53725
+    },
+    "train_time_max": "2023-04-30",
+    "valid_time_min": "2023-05-01",
+    "valid_time_max": "2023-10-12"
+  },
+  "elapsed_seconds": 383.5
+}
