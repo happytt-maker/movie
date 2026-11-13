@@ -1,0 +1,15 @@
+{
+  "users": 190880,
+  "ndcg@10": 0.7822587997069194,
+  "recall@10": 0.7397843109873637,
+  "mrr@10": 0.8383496924021075,
+  "model": "als",
+  "pred_file": "results/top10_als.csv",
+  "candidates_file": "processed/candidates_test.npz",
+  "k": 10,
+  "seed": 20260907,
+  "positive_threshold": 4,
+  "distinct_items_recommended": 16853,
+  "avg_recommendations_per_user": 10.0,
+  "elapsed_seconds": 21.27
+}

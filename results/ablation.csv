@@ -1,0 +1,5 @@
+config,dropped_features,ndcg@10,recall@10,delta_ndcg,delta_pct,best_iteration,users,note
+ranker_full,,0.86037,0.82374,0.0,0.0,1,191007,全量 9 特征（最终模型）
+ranker_no_bpr,bpr,0.84173,0.80708,-0.01864,-2.17,300,191007,去掉 BPR 分数
+ranker_no_genre,genre_affinity,0.85244,0.82122,-0.00793,-0.92,1,191007,去掉类型亲和度
+ranker_no_temporal,item_recency;item_trend;user_last_activity,0.84691,0.8162,-0.01346,-1.56,1,191007,去掉时序三项（trend / recency / last_activity）

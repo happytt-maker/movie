@@ -1,0 +1,14 @@
+{
+  "model": "lsh",
+  "method": "item-kNN：头部 3,000 部 × 全库余弦 top-200 邻居，在测试候选集内累加相似度；同分按热度",
+  "relation_to_lsh": "与 src/similarity/itemknn.py 的 LSH 使用同一头部集合与同一相似度定义，本文件是精确邻居版本",
+  "users": 191007,
+  "rows": 1910070,
+  "k": 10,
+  "head_items": 3000,
+  "neighbors_per_item": 200,
+  "users_without_head_history": 4,
+  "ranking_seconds": 91.6,
+  "latency_ms_per_user": 0.4796,
+  "pred_file": "top10_lsh.csv"
+}
